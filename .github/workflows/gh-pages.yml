@@ -81,7 +81,9 @@ jobs:
         with:
           node-version: '20'
       - name: Enable corepack
-        run: corepack enable
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
 
       - name: Get pnpm store directory
         shell: bash
